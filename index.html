@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <title>Learning Vue+Vite </title>
+    <style>
+      #app{
+        display: inline-block;
+        padding: 10px;
+        font-size: x-large;
+        background-color: lightgoldenrodyellow;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <h1> KBT Teacher</h1>
+    <div id="app">
+      {{ message }}
+      {{'Your number is :' + Math.ceil(Math.random()*100) }}
+    </div>
     <script type="module" src="/src/main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script> 
+       const app = Vue.createApp({
+        data() {
+          return {
+            message: "Learning Vue with me!"
+          }
+        }
+       })
+
+       app.mount('#app')
+    </script>
   </body>
 </html>
